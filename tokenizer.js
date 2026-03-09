@@ -1,9 +1,4 @@
-const FUNCTIONS = ["sin", "cos", "tan", "log", "ln", "√"];
-
-const CONSTANTS = {
-  π: Math.PI,
-  e: Math.E,
-};
+import { FUNCTIONS, CONSTANTS } from "./constants.js";
 
 export function tokenize(expression) {
   let myToken = [];
@@ -49,7 +44,7 @@ export function tokenize(expression) {
       currentInput += val;
     }
     // Handle decimal point
-    else if (val == ".") {
+    else if (val === ".") {
       if (hasDot) {
         throw new Error("Invalid Number format");
       }
