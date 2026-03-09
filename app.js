@@ -12,11 +12,7 @@ import { evaluatePostfix } from "./evaluator.js";
 
 const displayinput = document.querySelector(".display-area input");
 const displaybtn = document.querySelectorAll(".buttons-area button");
-const FUNCTIONS = ["sin", "cos", "tan", "log", "ln", "√"];
-const CONSTANTS = {
-  π: Math.PI,
-  e: Math.E,
-};
+import { FUNCTIONS} from "./constants.js";
 
 // Handle all button clicks
 displaybtn.forEach((a) => {
