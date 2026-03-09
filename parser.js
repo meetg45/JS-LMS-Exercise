@@ -1,20 +1,15 @@
-const FUNCTIONS = ["sin", "cos", "tan", "log", "ln", "√"];
-
-const CONSTANTS = {
-  π: Math.PI,
-  e: Math.E,
-};
+import { FUNCTIONS, CONSTANTS } from "./constants.js";
 
 export function infixToPostfix(tokens) {
   const output = [];
   const stack = [];
 
   for (let i = 0; i < tokens.length; i++) {
-    if (tokens[i] == "(") {
+    if (tokens[i] === "(") {
       stack.push(tokens[i]);
     } else if (FUNCTIONS.includes(tokens[i])) {
       stack.push(tokens[i]);
-    } else if (tokens[i] == ")") {
+    } else if (tokens[i] === ")") {
       while (stack.length && stack[stack.length - 1] !== "(") {
         output.push(stack.pop());
       }
