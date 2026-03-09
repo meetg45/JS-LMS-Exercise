@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- CALCULATOR -->
+      <div class="main-container">
+        <div class="calc-title">Scientific Calculator</div>
+        <span id="modeLabel">DEG</span>
+
+        <div class="display-area">
+          <div class="display-expr" id="displayExpr"></div>
+          <input type="text" placeholder="0" readonly />
+        </div>
+
+        <div class="buttons-area">
+          <!-- DEG + Trigo row -->
+          <div class="four-btn-row">
+            <button class="btn deg" id="degBtn">DEG <small>RAD</small></button>
+            <button class="btn trigo" data-value="sin(">sin</button>
+            <button class="btn trigo" data-value="cos(">cos</button>
+            <button class="btn trigo" data-value="tan(">tan</button>
+          </div>
+
+          <!-- Main grid -->
+          <div class="main-grid">
+            <button class="btn 10x" data-value="10^">10<sup>x</sup></button>
+            <button class="btn x2">x<sup>2</sup></button>
+            <button class="btn xy">x<sup>y</sup></button>
+            <button class="btn backspace">⌫</button>
+            <button class="btn clear">C</button>
+
+            <button class="btn sqrt" data-value="√">√x</button>
+            <button class="btn inverse">1/x</button>
+            <button class="btn mod" data-value="%">%</button>
+            <button class="btn ANS" style="grid-column: span 2">ANS</button>
+
+            <button class="btn euler" data-value="e">e</button>
+            <button class="btn pi" data-value="π">π</button>
+            <button class="btn openBracket" data-value="(">(</button>
+            <button class="btn closeBracket" data-value=")">)</button>
+            <button class="btn operator" data-value="/">/</button>
+
+            <button class="btn log" data-value="log(">log</button>
+            <button class="btn number" data-value="7">7</button>
+            <button class="btn number" data-value="8">8</button>
+            <button class="btn number" data-value="9">9</button>
+            <button class="btn operator" data-value="*">*</button>
+
+            <button class="btn ln" data-value="ln(">ln</button>
+            <button class="btn number" data-value="4">4</button>
+            <button class="btn number" data-value="5">5</button>
+            <button class="btn number" data-value="6">6</button>
+            <button class="btn operator" data-value="-">-</button>
+
+            <button class="btn factorial" data-value="!">!</button>
+            <button class="btn number" data-value="1">1</button>
+            <button class="btn number" data-value="2">2</button>
+            <button class="btn number" data-value="3">3</button>
+            <button class="btn operator" data-value="+">+</button>
+            <button
+              class="btn number"
+              data-value="00"
+              style="grid-column: span 2"
+            >
+              00
+            </button>
+
+            <button class="btn number" data-value="0">0</button>
+            <button class="btn number" data-value=".">.</button>
+            <button class="btn equal" style="grid-row: span 2">=</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HISTORY -->
+      <div class="history-container">
+        <div class="history-header">
+          <span class="history-title">Calculation History</span>
+          <button class="clear-history" id="clearHistory">Clear All</button>
+        </div>
+        <div class="history-divider"></div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
