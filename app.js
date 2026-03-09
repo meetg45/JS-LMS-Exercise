@@ -11,7 +11,7 @@ import { addToHistory, clearHistory } from "./history.js";
 import { evaluatePostfix } from "./evaluator.js";
 
 const displayinput = document.querySelector(".display-area input");
-const displaybtn = document.querySelectorAll(".buttons-area");
+const displaybtn = document.querySelectorAll(".buttons-area button");
 const FUNCTIONS = ["sin", "cos", "tan", "log", "ln", "√"];
 const CONSTANTS = {
   π: Math.PI,
@@ -222,7 +222,7 @@ function calculate() {
     console.log(result);
 
     if (result === Infinity || isNaN(result)) {
-      expression = "Error";
+      expression = Error;
       updateDisplay();
       return;
     }
@@ -232,7 +232,7 @@ function calculate() {
     addToHistory(originalExpr, result);
     updateDisplay();
   } catch (err) {
-    expression = "Error";
+    expression = err.message;
     updateDisplay();
   }
 }
