@@ -1,8 +1,4 @@
-const CONSTANTS = {
-  π: Math.PI,
-  e: Math.E,
-};
-
+import { CONSTANTS } from "./constants.js";
 export function evaluatePostfix(postfix, isDeg) {
   // Function execution map
   const FUNCTION_MAP = {
@@ -12,10 +8,10 @@ export function evaluatePostfix(postfix, isDeg) {
 
     tan: (x) => {
       if (isDeg && x % 90 === 0 && (x / 90) % 2 !== 0) {
-        return Infinity;
+        throw new Error("tan is undefined at 90°");
       }
       return Math.tan(isDeg ? (x * Math.PI) / 180 : x);
-    },
+    },  
 
     log: (x) => {
       if (x <= 0) {
