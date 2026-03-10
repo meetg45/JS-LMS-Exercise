@@ -67,6 +67,7 @@ export function tokenize(expression) {
         !FUNCTIONS.includes(myToken[myToken.length - 1])
       ) {
         if (expression[i + 1] === "(") {
+          myToken.push("(");
           myToken.push("0");
           myToken.push("-");
         } else {
