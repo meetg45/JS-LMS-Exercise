@@ -63,7 +63,7 @@ export function tokenize(expression) {
       // Detect unary minus
       if (
         val == "-" &&
-        (i == 0 || "+-*/(^%(".includes(expression[i - 1])) &&
+        (i == 0 || "+-*/(^%".includes(expression[i - 1])) &&
         !FUNCTIONS.includes(myToken[myToken.length - 1])
       ) {
         if (expression[i + 1] === "(") {
