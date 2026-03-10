@@ -63,14 +63,18 @@ export function tokenize(expression) {
       // Detect unary minus
       if (
         val == "-" &&
-        (i == 0 || "+-*/(^%".includes(expression[i - 1])) &&
+        (i == 0 || "+-*/(^%(".includes(expression[i - 1])) &&
         !FUNCTIONS.includes(myToken[myToken.length - 1])
       ) {
         if (expression[i + 1] === "(") {
-          myToken.push("(");
-          myToken.push("0");
-          myToken.push("-");
-        } else {
+          if (currentInput !== "") {
+              myToken.push(currentInput);
+              currentInput = "";
+          }    
+
+      myToken.push("-1");
+      myToken.push("*");
+  } else {
           currentInput += val;
           hasDot = false;
         }
